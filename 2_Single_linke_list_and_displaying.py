@@ -16,10 +16,10 @@ class SingleLinkedList:
         if self.head is None:
             print("Linked List is Empty..!")
         else:
-            n = self.head
-            while n:
-                print(n.data,'-->',end=" ")
-                n = n.next
+            temp = self.head
+            while temp:
+                print(temp.data,'-->',end=" ")
+                temp = temp.next
 
 #Creating obeject for Linked List
 l = SingleLinkedList()
