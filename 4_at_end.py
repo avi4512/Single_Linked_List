@@ -12,10 +12,13 @@ class SinlgeLinkedLIst:
     # Adding at the end of the linked list
     def at_end(self,data):
         ne = Node(data)
-        temp = self.head
-        while temp.next:
-            temp = temp.next
-        temp.next = ne
+         if self.head is None:
+            self.head = ne
+        else:   
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = ne
 
     def display(self):
         if self.head is None:
