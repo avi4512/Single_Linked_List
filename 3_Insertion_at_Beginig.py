@@ -12,7 +12,7 @@ class SinlgeLinkedLIst:
         self.head = None
 
     #insertion node at the Begining of Linked List
-    def insert_begin(self,data):
+    def at_begin(self,data):
         nb = Node(data)
         nb.next = self.head
         self.head = nb
@@ -35,8 +35,7 @@ n3 = Node(30)
 n2.next = n3
 n4 = Node(40)
 n3.next = n4
-
-#Calling method and Adding node
-l.insert_begin(5)
-
+l.at_begin(5)
+l.at_begin(1)
 l.display()
+
