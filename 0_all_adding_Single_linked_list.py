@@ -42,28 +42,29 @@ class Linkedlist:
             ne = Node(data)
             temp.next = ne
             
-    def before_node(self,data,node):
+    def before_node(self,node,data):
         if self.head is None:
             print("Their is No before node is Presented..")
             return 
-        if self.head.data == node:
+         if self.head.data == n:
             bn = Node(data)
             bn.next = self.head
             self.head = bn
+            return 
+        temp = self.head
+        prev = None
+        while temp:
+            if temp.data == n:
+                break
+            prev = temp
+            temp = temp.next
+        if temp is None:
+            print("Node Not Found...!")
         else:
-            temp = self.head
-            while temp.next is not None:
-                if temp.next.data == node:
-                    break
-                else:
-                    temp = temp.next
-            if temp.next is None:
-                print("Not Found the Node..")
-            else:
-                bn = Node(data)
-                bn.next = temp.next
-                temp.next = bn
-
+            bn = Node(data)
+            bn.next = prev.next
+            prev.next = bn
+            
     def after_node(self,node,data):
 
         if self.head is None:
@@ -116,7 +117,7 @@ n3.next = n4
 
 l.insert_begin(5)
 l.insert_end(45)
-l.before_node(25,30)
+l.before_node(30,25)
 l.after_node(45,50)
 l.add_position(3,15)
 
